@@ -1,235 +1,66 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEDICINA AI</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #050816;
-            color: white;
-            min-height: 100vh;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 20px;
-            background: linear-gradient(135deg, #071b3a, #160b35);
-            border-bottom: 1px solid #00eaff;
-        }
-
-        header h1 {
-            font-size: 42px;
-            color: #00eaff;
-            text-shadow: 0 0 15px #00eaff;
-        }
-
-        header p {
-            margin-top: 10px;
-            color: #cccccc;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .welcome {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .welcome h2 {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
-        .welcome p {
-            color: #b9c5dc;
-            line-height: 1.7;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #10182d;
-            border: 1px solid #263b61;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #00eaff;
-            box-shadow: 0 0 20px #00eaff33;
-        }
-
-        .card h3 {
-            color: #00eaff;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #b9c5dc;
-            line-height: 1.6;
-        }
-
-        .chat {
-            margin-top: 40px;
-            padding: 25px;
-            background: #10182d;
-            border-radius: 15px;
-            border: 1px solid #00eaff;
-        }
-
-        .chat h2 {
-            color: #00eaff;
-            margin-bottom: 15px;
-        }
-
-        input {
-            width: 100%;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 8px;
-            border: 1px solid #00eaff;
-            background: #050816;
-            color: white;
-        }
-
-        button {
-            margin-top: 15px;
-            padding: 12px 25px;
-            background: #00eaff;
-            color: #050816;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        #respuesta {
-            margin-top: 20px;
-            color: #b9c5dc;
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #7788aa;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEDICINA AI</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#071426;color:white;text-align:center}
+header{padding:35px 15px;background:linear-gradient(135deg,#092c50,#101044)}
+h1{font-size:38px;color:#39e6ff;margin:5px}
+header p{color:#c7d8ed}
+main{max-width:700px;margin:35px auto;padding:20px}
+.panel{background:#10243d;padding:25px;border-radius:18px;border:1px solid #1c597a}
+h2{color:#39e6ff}
+textarea{width:100%;height:110px;padding:15px;border-radius:10px;border:0;font-size:16px;resize:vertical}
+button{margin-top:15px;padding:14px 25px;background:#00c9df;color:#001525;border:0;border-radius:10px;font-weight:bold;font-size:16px;cursor:pointer}
+button:disabled{opacity:.5}
+#respuesta{margin-top:20px;text-align:left;white-space:pre-wrap;line-height:1.6;background:#071a2d;padding:15px;border-radius:10px;min-height:60px}
+footer{padding:25px;color:#9eb5cb}
+</style>
 </head>
-
 <body>
-
-    <header>
-        <h1>MEDICINA AI</h1>
-        <p>El poder de la inteligencia artificial y la música</p>
-    </header>
-
-    <main class="container">
-
-        <section class="welcome">
-            <h2>Bienvenido al futuro</h2>
-            <p>
-                MEDICINA AI es un espacio de creatividad, música,
-                inteligencia artificial y nuevas ideas.
-                ¡Aquí comienza una nueva revolución musical!
-            </p>
-        </section>
-
-        <section class="cards">
-
-            <div class="card">
-                <h3>🤖 Asistente AI</h3>
-                <p>
-                    Un espacio para resolver preguntas,
-                    aprender y descubrir nuevas ideas.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🎵 Medicina Musical</h3>
-                <p>
-                    Creamos frases, canciones, ideas
-                    y contenido para nuestra agrupación.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🚀 Creación de contenido</h3>
-                <p>
-                    Ideas para videos, publicaciones,
-                    promociones y redes sociales.
-                </p>
-            </div>
-
-        </section>
-
-        <section class="chat">
-            <h2>Tu asistente MEDICINA AI</h2>
-
-            <p>
-                Escribe una pregunta o una idea para comenzar.
-            </p>
-
-            <input
-                type="text"
-                id="pregunta"
-                placeholder="Escribe aquí tu pregunta..."
-            >
-
-            <button onclick="responder()">
-                Consultar
-            </button>
-
-            <div id="respuesta"></div>
-        </section>
-
-    </main>
-
-    <footer>
-        © 2026 MEDICINA AI | Medicina Musical
-    </footer>
-
-    <script>
-        function responder() {
-            const pregunta = document
-                .getElementById("pregunta")
-                .value;
-
-            const respuesta = document
-                .getElementById("respuesta");
-
-            if (pregunta.trim() === "") {
-                respuesta.innerHTML =
-                    "Por favor, escribe una pregunta.";
-            } else {
-                respuesta.innerHTML =
-                    "¡Gracias por escribir a MEDICINA AI! " +
-                    "Nuestro asistente inteligente estará " +
-                    "disponible próximamente. Tu pregunta es: " +
-                    pregunta;
-            }
-        }
-    </script>
-
+<header>
+<h1>MEDICINA AI</h1>
+<p>Inteligencia artificial al servicio de tu creatividad</p>
+<strong>MEDICINA MUSICAL</strong>
+</header>
+<main>
+<div class="panel">
+<h2>Tu asistente inteligente</h2>
+<p>Pregúntame sobre música, canciones, publicidad o cualquier tema.</p>
+<textarea id="pregunta" placeholder="Escribe tu pregunta aquí..."></textarea>
+<br>
+<button id="enviar" onclick="consultar()">CONSULTAR A MEDICINA AI</button>
+<div id="respuesta">Aquí aparecerán las respuestas de tu inteligencia artificial.</div>
+</div>
+</main>
+<footer>Creado para MEDICINA MUSICAL © 2026</footer>
+<script>
+async function consultar(){
+const pregunta=document.getElementById("pregunta").value.trim();
+const respuesta=document.getElementById("respuesta");
+const boton=document.getElementById("enviar");
+if(!pregunta){respuesta.textContent="Por favor, escribe una pregunta.";return;}
+boton.disabled=true;
+respuesta.textContent="MEDICINA AI está pensando...";
+try{
+const resultado=await fetch("https://medicina-ai.grupomedicinamusical.workers.dev/",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({pregunta})
+});
+const datos=await resultado.json();
+if(!resultado.ok)throw new Error(datos.error||"No se pudo obtener respuesta.");
+respuesta.textContent=datos.respuesta||datos.error||"No recibí una respuesta.";
+}catch(error){
+respuesta.textContent="Error: "+error.message;
+}finally{
+boton.disabled=false;
+}
+}
+</script>
 </body>
 </html>
